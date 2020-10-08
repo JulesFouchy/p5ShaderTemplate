@@ -1,7 +1,7 @@
 let myShader: p5.Shader
 
 function preload() {
-    myShader = loadShader("shader/vert.glsl", "shader/frag.glsl")
+    myShader = loadShader("shader/myShader.vert", "shader/myShader.frag")
 }
 
 function setup() {
