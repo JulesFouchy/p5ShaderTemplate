@@ -11,9 +11,13 @@ function setup() {
 }
 
 function draw() {
+    // Restore usual p5 coordinates
+    translate(-width/2, -height/2)
+    // Apply shader
+    noStroke()
     shader(myShader)
     myShader.setUniform("uAspectRatio", width / height)
-    rect(0, 0, 0, 0)
+    rect(0, 0, width, height)
 }
 
 
