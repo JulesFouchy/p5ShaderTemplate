@@ -36,7 +36,7 @@ npm start
 ```
 
 A local version will now be running at [localhost:3000](http://localhost:3000)  
-You can now write all the p5 things you want in the __*sketch*__ folder, and your fragment shader in the __*shader*__ folder
+You can now write all the p5 things you want in the __*src*__ folder, and your fragment shader in the __*shader*__ folder
 
 ### Publishing online
 
