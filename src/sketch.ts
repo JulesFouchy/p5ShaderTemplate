@@ -1,12 +1,20 @@
 let myShader: p5.Shader
 
-function preload() {
-    myShader = loadShader("shader/myShader.vert", "shader/myShader.frag")
-}
+// -------------------
+//  Parameters and UI
+// -------------------
 
-function setup() {
-    template_CreateCanvas()
+const gui = new dat.GUI()
+const params = {
+    Blue: 0,
+    Download_Image: () => save(),
 }
+gui.add(params, "Blue", 0, 1, 0.1)
+gui.add(params, "Download_Image")
+
+// -------------------
+//       Drawing
+// -------------------
 
 function draw() {
     // Restore usual p5 coordinates
@@ -14,9 +22,22 @@ function draw() {
     // Setup shader
     shader(myShader)
     myShader.setUniform("uAspectRatio", width / height)
+    myShader.setUniform("uBlue", params.Blue)
     // Draw on the whole canvas
     noStroke()
     rect(0, 0, width, height)
+}
+
+// -------------------
+//    Initialization
+// -------------------
+
+function preload() {
+    myShader = loadShader("shader/myShader.vert", "shader/myShader.frag")
+}
+
+function setup() {
+    template_CreateCanvas()
 }
 
 function windowResized() {
