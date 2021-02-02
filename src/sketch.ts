@@ -37,9 +37,9 @@ function preload() {
 }
 
 function setup() {
-    template_CreateCanvas()
+    p6_CreateCanvas()
 }
 
 function windowResized() {
-    template_ResizeCanvas()
+    p6_ResizeCanvas()
 }
